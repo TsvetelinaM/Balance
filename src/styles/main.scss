@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+
+body {
+    background: linear-gradient(to right, $feather , $marine);
+}
+
+.btn-primary {
+    background-color: $forest;
+    border: $forest;
+}
