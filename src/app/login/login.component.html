@@ -2,39 +2,47 @@
   <form [formGroup]="loginForm" (ngSubmit)="onLogIn()">
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">@</span>
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
       </div>
-      <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon2">
+      <input type="text" class="form-control" formControlName="email" placeholder="Email" aria-describedby="sizing-addon2">
     </div>
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil"></i></span>
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
       </div>
-      <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon2">
+      <input type="password" class="form-control" formControlName="pass" placeholder="Password" aria-describedby="sizing-addon2">
     </div>
     <div class="form-group">
         <button class="btn btn-primary btn-xl">Log In</button>
         <a class="" (click)="showPopUp()" >or SignUp</a>
     </div>
   </form>
+
+
   <div class="pop-up" [ngClass]="{hidden: !displaySignUpForm}">
-    <button class="btn btn-primary btn-s btn-close" (click)="close()"><i class="material-icons">close</i></button>
+    <button class="btn btn-primary btn-s btn-close" (click)="onClose()"><i class="fas fa-times"></i></button>
     <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-      <div class="form-group">
-          <input type="text" formControlName="emailSignUp" class="form-control" placeholder="Email"/>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+        </div>
+        <input type="text" class="form-control" formControlName="emailSignUp" placeholder="Email" aria-describedby="sizing-addon2">
       </div>
-      <div class="form-group">
-          <input type="text" formControlName="passSignUp" class="form-control" placeholder="Password"/>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
+        </div>
+        <input type="password" class="form-control" formControlName="passSignUp" placeholder="Password" aria-describedby="sizing-addon2">
       </div>
-      <div class="form-group">
-          <input type="text" formControlName="passSignUpRepeat" class="form-control" placeholder="Password again"/>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
+        </div>
+        <input type="password" class="form-control" formControlName="passSignUpRepeat" placeholder="Password again" aria-describedby="sizing-addon2">
       </div>
       <div class="form-group">
           <button class="btn btn-primary btn-xl">Sign Up</button>
       </div>
     </form>
-  </div>
-  <div>
-    <span class="glyphicons glyphicons-parents"></span>
   </div>
 </div>

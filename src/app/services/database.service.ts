@@ -3,7 +3,7 @@
 // import * as firebase from 'firebase/app';
 // import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 // import 'rxjs/add/operator/map';
-// import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs';
 
 // @Injectable({
 //   providedIn: 'root'
