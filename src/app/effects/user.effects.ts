@@ -11,7 +11,7 @@ import { User } from '../models/user.model';
 @Injectable()
 export class UserEffects {
     @Effect()
-    loadOrders$: Observable<Action> = this.actions$
+    regUser$: Observable<Action> = this.actions$
     .pipe(  
             ofType('Register User'),       
             switchMap(action =>{
@@ -21,6 +21,18 @@ export class UserEffects {
                 return new CurrentUser(user);
             })
     );
+    @Effect()
+    loginUser$: Observable<Action> = this.actions$
+    .pipe(  
+            ofType('Login User'),       
+            switchMap(action =>{
+                return this.userService.logInUser(action['payload']);
+            } ),
+            map((user: any) => {
+                return new CurrentUser(user);
+            })
+    );
+
     constructor(
         private actions$: Actions,
         private userService: UserService

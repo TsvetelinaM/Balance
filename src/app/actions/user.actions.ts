@@ -1,4 +1,4 @@
-import { User } from './../models/user.model';
+import { User, RegUser, LoggedUser } from './../models/user.model';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 
@@ -7,7 +7,7 @@ export class RegisterUser implements Action {
     readonly type = RegisterUser.TYPE;
     static TYPE = 'Register User';
 
-    constructor(public payload: User) {
+    constructor(public payload: RegUser) {
 
     }
 }
@@ -25,9 +25,10 @@ export class CurrentUser implements Action {
     readonly type = CurrentUser.TYPE;
     static TYPE = 'Current User';
 
-    constructor(public payload: User) {
-
+    constructor(public payload: LoggedUser | null) {
     }
 }
+
+
 
 export type UserActions = RegisterUser & LoginUser & CurrentUser;
